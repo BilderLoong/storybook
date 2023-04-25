@@ -168,6 +168,7 @@ const starter: StarterFunction = async function* starterGeneratorFn({
     modulesCount,
   }).apply(compiler);
 
+  console.trace('builder-webpack5 starter');
   const middlewareOptions: Parameters<typeof webpackDevMiddleware>[1] = {
     publicPath: config.output?.publicPath as string,
     writeToDisk: true,
@@ -180,6 +181,7 @@ const starter: StarterFunction = async function* starterGeneratorFn({
 
   router.use(`/sb-preview`, express.static(previewDirOrigin, { immutable: true, maxAge: '5m' }));
 
+  // NOTE@BIRUDO place use the webpackDevMiddleware
   router.use(compilation);
   router.use(webpackHotMiddleware(compiler, { log: false }));
 

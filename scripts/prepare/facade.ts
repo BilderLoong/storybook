@@ -67,6 +67,7 @@ const run = async ({ cwd, flags }: { cwd: string; flags: string[] }) => {
         c.minifyWhitespace = optimized;
         c.minifyIdentifiers = optimized;
         c.minifySyntax = optimized;
+        c.sourcemap = true;
         /* eslint-enable no-param-reassign */
       },
     }),

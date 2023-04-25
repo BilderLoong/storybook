@@ -178,6 +178,7 @@ function getESBuildOptions(optimized: boolean) {
     minifyWhitespace: optimized,
     minifyIdentifiers: false,
     minifySyntax: optimized,
+    sourcemap: true,
   };
 }
 
